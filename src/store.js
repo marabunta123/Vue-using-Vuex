@@ -23,7 +23,8 @@ export default new Vuex.Store({
       { id: 4, text: '...', done: false }
     ],
     events: [],
-    count: 0
+    count: 0,
+    canContinue: false
   },
   mutations: {
     INCREMENT_COUNT(state, value) {
@@ -31,6 +32,12 @@ export default new Vuex.Store({
     },
     ADD_EVENT(state, event) {
       state.events.push(event)
+    },
+    SET_EVENTS(state, event) {
+      state.events = event
+    },
+    CAN_CONTINUE(state, canContinue) {
+      state.canContinue = canContinue
     }
   },
   actions: {
@@ -38,6 +45,19 @@ export default new Vuex.Store({
       return EventServices.postEvent(event).then(() => {
         commit('ADD_EVENT', event)
       })
+    },
+    fetchEvents({ commit }, { perPage, page }) {
+      EventServices.getEvents(perPage, page)
+        .then(response => {
+          commit(
+            'CAN_CONTINUE',
+            response.headers['x-total-count'] >= page * perPage
+          )
+          commit('SET_EVENTS', response.data)
+        })
+        .catch(error => {
+          console.log('There was an error:', error.response)
+        })
     }
   },
   getters: {
