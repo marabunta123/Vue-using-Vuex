@@ -23,6 +23,7 @@ export default new Vuex.Store({
       { id: 4, text: '...', done: false }
     ],
     events: [],
+    event: {},
     count: 0,
     canContinue: false
   },
@@ -35,6 +36,9 @@ export default new Vuex.Store({
     },
     SET_EVENTS(state, event) {
       state.events = event
+    },
+    SET_EVENT(state, event) {
+      state.event = event
     },
     CAN_CONTINUE(state, canContinue) {
       state.canContinue = canContinue
@@ -58,6 +62,20 @@ export default new Vuex.Store({
         .catch(error => {
           console.log('There was an error:', error.response)
         })
+    },
+    fetchEvent({ commit }, id) {
+      var event = this.getters.getEventById(id)
+      if (event) {
+        commit('SET_EVENT', event)
+      } else {
+        EventServices.getEvent(id)
+          .then(response => {
+            commit('SET_EVENT', response.data)
+          })
+          .catch(error => {
+            console.log('There was an error:', error.response)
+          })
+      }
     }
   },
   getters: {
