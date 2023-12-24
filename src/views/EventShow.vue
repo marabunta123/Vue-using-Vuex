@@ -35,7 +35,7 @@ export default {
   computed: mapState({
     event: state => state.event.event
   }),
-  mehtods: mapActions('event', ['fetchEvent'])
+  methods: mapActions('event', ['fetchEvent'])
 }
 </script>
 <style scoped>

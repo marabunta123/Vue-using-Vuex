@@ -231,6 +231,76 @@
       "date": "",
       "time": "5:00",
       "attendees": []
+    },
+    {
+      "id": 3019128,
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Succes test",
+      "description": "success description",
+      "location": "",
+      "date": "2023-12-08T16:56:00.000Z",
+      "time": "13:00",
+      "attendees": []
+    },
+    {
+      "id": 7360456,
+      "category": "housing",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Sucess2",
+      "description": "Success2 description",
+      "location": "",
+      "date": "2023-12-06T19:24:00.000Z",
+      "time": "13:00",
+      "attendees": []
+    },
+    {
+      "id": 4812354,
+      "category": "food",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Pizza party",
+      "description": "Pizza all you can eat",
+      "location": "Down Town",
+      "date": "2023-12-08T19:27:00.000Z",
+      "time": "9:00",
+      "attendees": []
+    },
+    {
+      "id": 297414,
+      "category": "community",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Christmas tree",
+      "description": "Gathering gifts",
+      "location": "Bay area",
+      "date": "2023-12-24T19:33:00.000Z",
+      "time": "9:00",
+      "attendees": []
+    },
+    {
+      "id": 4426748,
+      "category": "community",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Food bazar",
+      "description": "Food for all",
+      "location": "sunset plaza",
+      "date": "2023-12-24T20:01:00.000Z",
+      "time": "12:00",
+      "attendees": []
     }
   ]
 }
